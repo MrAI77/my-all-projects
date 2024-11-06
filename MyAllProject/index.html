@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <style>
+        /* Основные стили для body */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        /* Заголовок */
+        h1, h2 {
+            margin: 20px 0 10px;
+            color: #333;
+        }
+
+        /* Контейнер для карточек */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            width: 80%;
+        }
+
+        /* Стили для карточек */
+        .card {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            background-color: #f9f9f9;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hover-эффект для карточек */
+        .card:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* Адаптация под планшеты */
+        @media (max-width: 768px) {
+            .card-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Адаптация под мобильные устройства */
+        @media (max-width: 480px) {
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+            h1, h2 {
+                font-size: 1.5em;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Основной заголовок -->
+    <h1>Мои проекты</h1>
+
+    <!-- Секции без параллакса -->
+    <div class="card-container">
+        <a href="./Battery/index.html" class="card">Battery</a>
+        <a href="./Bread/index.html" class="card">Bread</a>
+        <a href="./Burger_website-main/index.html" class="card">Burger Website</a>
+        <a href="./Eliana/index.html" class="card">Eliana</a>
+        <a href="./responsive-juice-website-main/index.html" class="card">Juice Website</a>
+        <a href="./Shoes/index.html" class="card">Shoes</a>
+        <a href="./Slide/index.html" class="card">Slide</a>
+        <a href="./Chips/index.html" class="card">Chips</a>
+        <a href="./Coffee/index.html" class="card">Coffee</a>
+    </div>
+
+    <!-- Секции с параллакс-эффектом -->
+    <h2>Сайты с параллакс-эффектом</h2>
+    <div class="card-container">
+        <a href="./Paralax/grow-lesson/html/index.html" class="card">Grow Lesson</a>
+        <a href="./Paralax/parallax-3d-lens-effect-website/html/index.html" class="card">3D Lens Effect</a>
+        <a href="./Paralax/parallax-scrolling-website/ready-html/index.html" class="card">Parallax Scrolling</a>
+        <a href="./Paralax/showcase-3d-effect/INDEX/index.html" class="card">3D Showcase</a>
+    </div>
+</body>
+</html>

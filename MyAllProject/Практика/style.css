@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: linear-gradient(white, grey);
+}
+.cardw{
+    max-width: 1100px;
+    margin: 0 60px 35px;
+    padding: 20px 10px;
+    overflow: hidden;
+}
+
+.cardl  .cardi{
+    list-style: none;
+}
+.cardl  .cardi .cardli{
+     user-select: none;
+     display: block;
+     background: #fff;
+     padding: 18px;
+     border-radius: 12px;
+     text-decoration: none;
+     border: 2px solid transparent;
+     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+     transition: 0.2 ease;
+
+}
+.cardl  .cardi .cardli:active{
+    cursor: grabbing;
+}
+.cardl  .cardi .cardli:hover{
+    border-color: #5372f0;
+}
+.cardl .cardli .cardimg{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.cardl .cardli .badg{
+    color: #5372f0;
+    padding: 8px 16px ;
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    margin: 16px 0 18px;
+    background: #dde4ff;
+    width: fit-content;
+    border-radius: 50px;
+}
+.cardl .cardli .badg.designer{
+    color: #b22485;
+    background: #f7dff5;
+}
+.cardl .cardli .badg.marketer{
+    color: #b25a2b;
+    background: #d6f8d6;
+}
+.cardl .cardli .badg.gamer{
+    color: #205c20;
+    background: #d6f8d6;
+}
+.cardl .cardli .badg.editor{
+    color: #856404;
+    background: #fff3cd;
+}
+
+
+.cardl .cardli .cardtl{
+    font-size: 1.19rem;
+    color: #000;
+    font-weight: 600;
+
+}
+.cardl .cardli .material-symbols-outlined{
+    height: 35px;
+    width: 35px;
+    color: #5372f0;
+    border-radius: 50%;
+    margin: 30px 0 5px;
+    background: none;
+    cursor: pointer;
+    border: 2px solid #5372f0;
+    transform: rotate(-45deg);
+    transition: 0.4 ease;
+}
+.cardl .cardli:hover .material-symbols-outlined{
+    color: #fff;
+    background: #5372f0;
+}
+
+.cardw .swiper-pagination-bullet{
+    height: 13px;
+    width: 13px;
+    opacity: 0.5;
+    background: #5372f0;
+}
+.cardw .swiper-pagination-bullet-active{
+    opacity: 1;
+}
+
+.card-wrapper .swiper-slide-button{
+    color: #5372f0;
+    margin-top: -35px;
+}
+
+@media screen  and (max-width:768px){
+    .cardw{
+        margin: 0 10px 25px;
+    }
+    .cardw .swiper-slide-button{
+        display: none;
+    }
+    
+}
