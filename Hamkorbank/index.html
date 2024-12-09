@@ -1,1089 +1,466 @@
 <!DOCTYPE html>
-<html lang="english">
+<html lang="en">
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta charset="utf-8" />
-
-
-  <style data-tag="reset-style-sheet">
-    html {
-      line-height: 1.15;
-    }
-
-    body {
-      margin: 0;
-    }
-
-    * {
-      box-sizing: border-box;
-      border-width: 0;
-      border-style: solid;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    p,
-    li,
-    ul,
-    pre,
-    div,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    figure,
-    blockquote,
-    figcaption {
-      margin: 0;
-      padding: 0;
-    }
-
-    button {
-      background-color: transparent;
-    }
-
-    button,
-    input,
-    optgroup,
-    select,
-    textarea {
-      font-family: inherit;
-      font-size: 100%;
-      line-height: 1.15;
-      margin: 0;
-    }
-
-    button,
-    select {
-      text-transform: none;
-    }
-
-    button,
-    [type="button"],
-    [type="reset"],
-    [type="submit"] {
-      -webkit-appearance: button;
-      color: inherit;
-    }
-
-    button::-moz-focus-inner,
-    [type="button"]::-moz-focus-inner,
-    [type="reset"]::-moz-focus-inner,
-    [type="submit"]::-moz-focus-inner {
-      border-style: none;
-      padding: 0;
-    }
-
-    button:-moz-focus,
-    [type="button"]:-moz-focus,
-    [type="reset"]:-moz-focus,
-    [type="submit"]:-moz-focus {
-      outline: 1px dotted ButtonText;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: inherit;
-    }
-
-    input {
-      padding: 2px 4px;
-    }
-
-    img {
-      display: block;
-    }
-
-    details {
-      display: block;
-      margin: 0;
-      padding: 0;
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    [data-thq="accordion"] [data-thq="accordion-content"] {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-in-out;
-      padding: 0;
-    }
-
-    [data-thq="accordion"] details[data-thq="accordion-trigger"][open]+[data-thq="accordion-content"] {
-      max-height: 300vh;
-    }
-
-    details[data-thq="accordion-trigger"][open] summary [data-thq="accordion-icon"] {
-      transform: rotate(180deg);
-    }
-
-    html {
-      scroll-behavior: smooth
-    }
-  </style>
-  <style data-tag="default-style-sheet">
-    html {
-      font-family: Inter;
-      font-size: 16px;
-    }
-
-    @media (max-width: 768px) {
-      body {
-        display: none;
-
-      }
-    }
-
-
-    body {
-      font-weight: 400;
-      font-style: normal;
-      text-decoration: none;
-      text-transform: none;
-      letter-spacing: normal;
-      line-height: 1.15;
-      color: var(--dl-color-theme-neutral-dark);
-      background: var(--dl-color-theme-neutral-light);
-
-      fill: var(--dl-color-theme-neutral-dark);
-    }
-  </style>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&amp;display=swap"
-    data-tag="font" />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-    data-tag="font" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HamkorBank</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-  <link rel="stylesheet" href="./style.css" />
-  <div>
-    <link href="./index.css" rel="stylesheet" />
+<div class="wrapper">
+  <header class="navbar1">
+    <div class="navbar-left">
+      <a href="#">Частным лицам</a>
+      <a href="#">Для бизнеса</a>
+      <a href="#">Акционерам и инвесторам</a>
+      <a href="#">Ещё</a>
+    </div>
+    <div class="navbar-right">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <i class="fa-solid fa-headphones"></i>
+      <i class="fa-solid fa-location-dot"></i>
+      <a href="#">Отделения и банкоматы</a>
+      <i class="fa-solid fa-globe"></i>
+      <label for="til"><i>Язык</i></label>
 
-    <div class="body-container10">
-      <div class="body-banner">
-        <div class="body-background10">
-          <div class="body-container11">
-            <div class="body-component110">
-              <span class="body-text100 hamkorbank.uzGolosTextRegular">
-                Частным лицам
-              </span>
-            </div>
-            <div class="body-component111">
-              <span class="body-text101 hamkorbank.uzGolosTextRegular">
-                Для бизнеса
-              </span>
-            </div>
-            <div class="body-component810">
-              <span class="body-text102 hamkorbank.uzGolosTextRegular">
-                Акционерам и&nbsp;инвесторам
-              </span>
-            </div>
-            <div class="body-component811">
-              <span class="body-text103 hamkorbank.uzGolosTextRegular">
-                Ещё
-              </span>
-            </div>
-            <a href="https://hamkorbank.uz/" target="_blank" rel="noreferrer noopener" class="body-link10">
-              <div class="body-component71">
-                <img src="public/external/component2i199-erg5.svg" alt="Component2I199" class="body-component210" />
-              </div>
-            </a>
-            <a href="https://hamkorbank.uz/" target="_blank" rel="noreferrer noopener" class="body-link11">
-              <div class="body-component72">
-                <img src="public/external/component2i110-rc6f.svg" alt="Component2I110" class="body-component211" />
-              </div>
-            </a>
-            <a href="https://hamkorbank.uz/filials/" target="_blank" rel="noreferrer noopener" class="body-link12">
-              <div class="body-component91">
-                <img src="public/external/component2i110-trt.svg" alt="Component2I110" class="body-component212" />
-                <span class="body-text104 hamkorbank.uzGolosTextMedium">
-                  Отделения и&nbsp;банкоматы
-                </span>
-              </div>
-            </a>
-            <a href="https://hamkorbank.uz/uz/" target="_blank" rel="noreferrer noopener" class="body-link13">
-              <div class="body-component92">
-                <img src="public/external/component2i110-fhx.svg" alt="Component2I110" class="body-component213" />
-                <span class="body-text105 hamkorbank.uzGolosTextMedium">
-                  Oʻzb
-                </span>
-              </div>
-            </a>
-            <a href="https://cabinet.hamkorbank.uz/uz/category/cabinet2/login/" target="_blank"
-              rel="noreferrer noopener" class="body-link14">
-              <div class="body-component93">
-                <img src="public/external/component2i110-w0e.svg" alt="Component2I110" class="body-component214" />
-                <span class="body-text106 hamkorbank.uzGolosTextMedium">
-                  Личный кабинет
-                </span>
-              </div>
-            </a>
+      <i class="fa-solid fa-person-rifle"></i>
+      <a href="#">личный кабинет</a>
+    </div>
+  </header>
+  <header class="header">
+    <div class="header-left">
+      <nav class="navigation">
+        <a href="#">Кредиты</a>
+        <a href="#">Карты</a>
+        <a href="#">Микрозаймы</a>
+        <a href="#">Вклады</a>
+        <a href="#">Курс валют</a>
+        <a href="#">Ещё</a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <div class="currency-box">
+        <div class="currency">
+
+          <div class="currency-details">
+            <p class="currency-label">Купить</p>
+            <p class="currency-value">$ 12 770</p>
           </div>
         </div>
-        <div class="body-container12">
-          <a href="https://hamkorbank.uz/" target="_blank" rel="noreferrer noopener" class="body-link15">
-            <div class="body-link16">
-              <img src="public/external/logosvg1102-s4mh.svg" alt="logosvg1102" class="body-logosvg" />
-            </div>
-          </a>
-          <div class="body-component812">
-            <span class="body-text107 hamkorbank.uzGolosTextMedium1">
-              Кредиты
-            </span>
+        <div class="currency">
+          <p class="currency-label">Продать</p>
+          <p class="currency-value">12 860</p>
+        </div>
+      </div>
+      <a href="#" class="btn">Интернет-банк</a>
+    </div>
+  </header>
+</div>    
+  <section class="banner">
+    <div class="banner-content">
+      <h1>Откройте и пользуйтесь картой UZCARD — выиграйте iPhone 15 Pro</h1>
+      <p>Чем больше платежей, тем больше шансов!</p>
+      <a href="#" class="btn-participate">Участвовать</a>
+    </div>
+    <div class="banner-image">
+      <img src="UZCARD.png" alt="UZCARD" class="card-image">
+    </div>
+  </section><br>
+  <div class="obsh">
+    <div class="card1">
+      <h2>Кредиты <a href="#" class="all1">Все</a></h2>
+      <a href="#">Товары и услуги <span class="g">></span></a>
+      <a href="#">Покупка авто<span class="g">></span></a>
+      <a href="#">Покупка и ремонт жилья<span class="g">></span></a>
+    </div>
+
+    <div class="card1">
+      <h2>Карты<a href="#" class="all1">Все</a></h2>
+      <a href="#">для покупок <span class="g">></span></a>
+      <a href="#">для онлайн-покупок<span class="g">></span></a>
+      <a href="#">Для путишествие <span class="g">></span></a>
+    </div>
+
+    <div class="card1">
+      <h2>Микрозаймы<a href="#" class="all1">Все</a></h2>
+      <a href="#"></a>
+      <a href="#">онлайн микрозайм<span class="g">></span></a>
+      <a href="#">Микрозайм под залог<span class="g">></span></a>
+    </div>
+
+    <div class="card1">
+      <h2>Вклады<a href="#" class="all1">Все</a></h2>
+      <a href="#">онлайн вклад<span class="g">></span></a>
+      <a href="#">в национальной валюте<span class="g">></span></a>
+      <a href="#">В иностранной валюте<span class="g">></span></a>
+    </div>
+  </div><br>
+  <h1 style="margin-left: 20px;">Популярные продукты</h1><br>
+
+  <div class="l">
+    <p class="text1">Финансы</p>
+    <p class="text2">премиум</p><br>
+  </div><br>
+
+  <div class="container3">
+    <div class="card3">
+      <div class="card-content3">
+        <h2>Бесплатная карта Visa</h2>
+        <p>Откройте виртуальную карту <br> для покупок в интернете <br> за 7 секунд</p>
+        <button class="f1">Оформить</button>
+      </div>
+    </div>
+  </div>
+  <div class="container4">
+    <div class="card4">
+      <div class="card-content4">
+        <h2>Микрозайм<br>за 15 минут<img src="3.webp" alt="" style="width: 50px; margin-left: 20px;"></h2>
+        <p class="d1">Оформление онлайн</p>
+        <button class="f2">Подробное</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container5">
+    <div class="card5">
+      <div class="card-content5">
+        <h2>Ипотека<br>под 17,5%<img src="4.webp" alt="" style="width: 50px; margin-left: 20px;"></h2>
+        <p class="d5">Нужен только паспорт</p>
+        <button class="f5">Подробное</button>
+      </div>
+    </div>
+  </div>
+  <br><br><br>
+
+  <h1 style="margin-left: 30px;">Карты</h1><br><br>
+
+
+  <div style="display: flex; gap: 30px;">
+    <div class="card-wrapper7" style="margin-left: 30px;">
+      <div class="card-info7">
+        <div class="card-tags7">
+          <span class="card-tag7" style="width: 160px;"><i class="fa-solid fa-cart-shopping"></i> Для покупок</span>
+          <span class="card-currency7">UZS</span>
+        </div>
+        <div style="display: flex; gap: 30px;">
+          <span class="y1">
+            <h1 class="card-title7">HUMO</h1><br>
+            <p class="card-free7">бесплатно</p>
+            <p class="card-detail7">Оформление</p>
+          </span>
+          <span class="y" style="margin-top: 50px;">
+            <p class="card-time7">от 3 дней</p>
+            <p class="card-detail7">Изготовление</p>
+          </span>
+        </div>
+        <button class="card-button7">Подробнее</button>
+      </div>
+      <div class="card-visual">
+        <img src="5.webp" alt="HUMO Card" class="card-image3">
+      </div>
+    </div>
+
+    <div class="card-wrapper7">
+      <div class="card-info7">
+        <div class="card-tags7">
+          <span class="card-tag7" style="width: 160px;"><i class="fa-solid fa-cart-shopping"></i> Для покупок</span>
+          <span class="card-currency7">UZS</span>
+        </div>
+        <div style="display: flex; gap: 30px;">
+          <span class="y1">
+            <h1 class="card-title7">UZCARD</h1><br>
+            <p class="card-free7">30 000 сум</p>
+            <p class="card-detail7">Оформление</p>
+          </span>
+          <span class="y" style="margin-top: 50px;">
+            <p class="card-time7">от 3 дней</p>
+            <p class="card-detail7">Изготовление</p>
+          </span>
+        </div>
+        <button class="card-button7">Подробнее</button>
+      </div>
+      <div class="card-visual">
+        <img src="6.webp" alt="HUMO Card" class="card-image3">
+      </div>
+    </div>
+  </div> <br><br>
+
+
+  <div style="display: flex; gap: 30px;">
+    <div class="card-wrapper7" style="margin-left: 30px;">
+      <div class="card-info7">
+        <div class="card-tags7">
+          <span class="card-tag7" style="width:190px;"><i class="fa-solid fa-map"></i>Для путешествий</span>
+          <span class="card-currency7">USD</span> <span class="card-currency7">EUR</span>
+        </div>
+        <div style="display: flex; gap: 30px;">
+          <span class="y1">
+            <h1 class="card-title7">Visa Classic</h1><br>
+            <p class="card-free7">бесплатно</p>
+            <p class="card-detail7">Оформление</p>
+          </span>
+          <span class="y" style="margin-top: 50px;">
+            <p class="card-time7">от 3 дней</p>
+            <p class="card-detail7">Изготовление</p>
+          </span>
+        </div>
+        <button class="card-button7">Подробнее</button>
+      </div>
+      <div class="card-visual">
+        <img src="7.webp" alt="HUMO Card" class="card-image3">
+      </div>
+    </div>
+
+    <div class="card-wrapper7">
+      <div class="card-info7">
+        <div class="card-tags7">
+          <span class="card-tag7" style="width:150px;"><i class="fa-solid fa-map"></i>Для покупок</span>
+          <span class="card-currency7">USD</span>
+        </div>
+        <div style="display: flex; gap: 30px;">
+          <span class="y1">
+            <h1 class="card-title7">UnionPay Classic</h1><br>
+            <p class="card-free7">бесплатно</p>
+            <p class="card-detail7">Оформление</p>
+          </span>
+          <span class="y" style="margin-top: 50px;">
+            <p class="card-time7" style="margin-top: 30px;">от 3 дней</p>
+            <p class="card-detail7">Изготовление</p>
+          </span>
+        </div>
+        <button class="card-button7">Подробнее</button>
+      </div>
+      <div class="card-visual">
+        <img src="8.webp" alt="HUMO Card" class="card-image3">
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <h1 style="margin-left: 30px;">О Hamkorbank</h1><br><br>
+
+
+  <div class="content-wrapper">
+    <div class="highlight-card">
+      <h1 class="highlight-title">Hamkorbank более <br> 30 лет с вами!</h1>
+      <p class="highlight-text">Вместе мы уверены в друг друге <br> и всегда на высоте!</p><br><br>
+      <button class="highlight-button">Подробнее</button>
+    </div>
+    <div class="stats-container">
+      <div class="stat-block">
+        <div class="block-icon" style="margin-left: -260px;"><i class="fa-solid fa-brain"></i></div><br>
+        <p class="block-number" style="margin-left: -220px;">33 года</p><br>
+        <p class="block-caption" style="margin-left: -190px;">Вместе с вами</p>
+      </div>
+      <div class="stat-block">
+        <div class="block-icon" style="margin-left: -270px;"><i class="fa-solid fa-building-columns"></i></div><br>
+        <p class="block-number">157 офиса</p><br>
+        <p class="block-caption" style="margin-left: -130px;">Во всех регионах страны</p>
+      </div>
+      <div class="stat-block">
+        <div class="block-icon" style="margin-left: -270px;"><i class="fa-solid fa-person-rifle"></i></div><br>
+        <p class="block-number" style="margin-left: -180px;">3 миллиона</p><br>
+        <p class="block-caption" style="margin-left: -170px;">Активных клиентов</p>
+      </div>
+      <div class="stat-block">
+        <div class="block-icon" style="margin-left: -270px;"><i class="fa-solid fa-globe"></i></div><br>
+        <p class="block-number" style="margin-left: -240px;">16 лет</p><br>
+        <p class="block-caption" style="margin-left: -130px;">На международном рынке</p>
+      </div>
+    </div>
+  </div><br><br>
+
+  <div class="container">
+    <div class="header2" style="display: flex; align-items: center; justify-content: space-between;">
+      <div class="text" style="flex: 1;">
+        <h1>
+          Приложение Hamkor
+        </h1>
+        <ul>
+          <li>
+            Обменивайте валюту в два клика
+          </li>
+          <li>
+            Переводите до 5 000 000 сум в месяц бесплатно
+          </li>
+          <li>
+            Оформляйте дебетовую карту VISA бесплатно
+          </li>
+        </ul>
+        <div class="qr-code" style="display: flex; align-items: center;">
+          <img alt="QR-код для быстрого доступа ко всем услугам банка" height="80"
+            src="https://storage.googleapis.com/a1aa/image/fOzfVpqYX7gToEEIHceIzX2GdULG3OFtSadkK3Ukypezr3UPB.jpg"
+            width="80" />
+          <p style="margin-left: 10px;">
+            Мобильный банк
+            <br />
+            Сканируйте QR-код для быстрого доступа ко всем услугам банка
+          </p>
+        </div>
+      </div>
+      <div class="image" style="flex: 1; text-align: right;">
+        <img src="./UZCARD.png" alt="Фото справа" style="max-width: 400px; height: auto;">
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <div class="main-content">
+    <div class="card">
+      <h2>
+        Отделения и банкоматы
+      </h2>
+      <p>
+        Покажем ближайшие банкоматы для снятия наличных
+      </p>
+      <button>
+        Открыть карту
+      </button>
+    </div>
+    <div class="card">
+      <h2>
+        Обратная связь
+      </h2>
+      <p>
+        Отвечаем на вопросы по всем продуктам
+      </p>
+      <button class="b0">
+        Связаться с поддержкой
+      </button>
+    </div>
+  </div>
+  </div>
+  <div class="w-layout-blockcontainer container w-container">
+    <div class="flex mx-8 space-x-reverse flex-wrap mb-48 sm--flex-col sm--mb-32">
+      <div class="w-1-4 px-8 sm--w-full">
+        <div class="sm--px-20 sm--mb-32">
+          <div class="mb-20"> <a href="tel:08001200200" class="heading-style-h3 text-black mb-12 inline-block">0 (800)
+              1&thinsp;200&thinsp;200</a><span class="heading-style-h3 text-black">, </span><a href="tel:1256"
+              class="heading-style-h3 text-black mb-12 inline-block">1256</a>
+            <div class="text-size-s text-gray">Колл центр</div>
           </div>
-          <div class="body-component813">
-            <span class="body-text108 hamkorbank.uzGolosTextMedium1">
-              Карты
-            </span>
-          </div>
-          <div class="body-component814">
-            <span class="body-text109 hamkorbank.uzGolosTextMedium1">
-              Микрозаймы
-            </span>
-          </div>
-          <div class="body-component815">
-            <span class="body-text110 hamkorbank.uzGolosTextMedium1">
-              Вклады
-            </span>
-          </div>
-          <a href="https://hamkorbank.uz/exchange-rate/" target="_blank" rel="noreferrer noopener" class="body-link17">
-            <div class="body-component112">
-              <span class="body-text111 hamkorbank.uzGolosTextMedium1">
-                Курс валют
-              </span>
-            </div>
-          </a>
-          <div class="body-component816">
-            <span class="body-text112 hamkorbank.uzGolosTextMedium1">
-              Еще
-            </span>
-          </div>
-          <a href="https://hamkorbank.uz/exchange-rate/" target="_blank" rel="noreferrer noopener" class="body-link18">
-            <div class="body-link19">
-              <span class="body-text113 hamkorbank.uzSemanticLink">
-                Купить
-              </span>
-              <span class="body-text114 hamkorbank.uzSemanticLink2">
-                12,770
-              </span>
-              <span class="body-text115 hamkorbank.uzSemanticLink">
-                Продать
-              </span>
-              <span class="body-text116 hamkorbank.uzSemanticLink2">
-                12,870
-              </span>
-            </div>
-          </a>
-          <div class="body-component410">
-            <span class="body-text117 hamkorbank.uzGolosTextMedium">
-              Интернет-банк
-            </span>
+          <div> <a href="tel:+08001200200" class="heading-style-h3 text-black mb-12 inline-block">+ 998 (78) 150 91
+              25</a>
+            <div class="text-size-s text-gray">Телефон доверия</div>
           </div>
         </div>
       </div>
-      <div class="body-body">
-        <div class="body-container13">
-          <div class="body-container14">
-            <div class="body-container15">
-              <div class="body-container16">
-                <div class="body-section1">
-                  <div class="body-background11">
-                    <span class="body-text118 hamkorbank.uzMontserratSemiBold">
-                      Кредиты
-                    </span>
-                    <div class="body-component113">
-                      <span class="body-text119 hamkorbank.uzGolosTextRegular1">
-                        Все
-                      </span>
-                    </div>
-                    <a href="https://hamkorbank.uz/physical/credits/" target="_blank" rel="noreferrer noopener"
-                      class="body-link20">
-                      <div class="body-component310">
-                        <span class="body-text120 hamkorbank.uzGolosTextRegular1">
-                          Товары и услуги
-                        </span>
-                        <img src="public/external/component2i160-6sw.svg" alt="Component2I160"
-                          class="body-component215" />
-                      </div>
-                    </a>
-                    <a href="https://hamkorbank.uz/physical/credits/" target="_blank" rel="noreferrer noopener"
-                      class="body-link21">
-                      <div class="body-component311">
-                        <span class="body-text121 hamkorbank.uzGolosTextRegular1">
-                          Покупка авто
-                        </span>
-                        <img src="public/external/component2i160-bo7f.svg" alt="Component2I160"
-                          class="body-component216" />
-                      </div>
-                    </a>
-                    <a href="https://hamkorbank.uz/physical/credits/" target="_blank" rel="noreferrer noopener"
-                      class="body-link22">
-                      <div class="body-component312">
-                        <span class="body-text122 hamkorbank.uzGolosTextRegular1">
-                          Покупка и ремонт жилья
-                        </span>
-                        <img src="public/external/component2i161-euqm.svg" alt="Component2I161"
-                          class="body-component217" />
-                      </div>
-                    </a>
-                  </div>
-                  <div class="body-background12">
-                    <span class="body-text123 hamkorbank.uzMontserratSemiBold">
-                      Карты
-                    </span>
-                    <div class="body-component114">
-                      <span class="body-text124 hamkorbank.uzGolosTextRegular1">
-                        Все
-                      </span>
-                    </div>
-                    <a href="https://hamkorbank.uz/physical/bank-cards/" target="_blank" rel="noreferrer noopener"
-                      class="body-link23">
-                      <div class="body-component313">
-                        <span class="body-text125 hamkorbank.uzGolosTextRegular1">
-                          Для покупок
-                        </span>
-                        <img src="public/external/component2i162-452.svg" alt="Component2I162"
-                          class="body-component218" />
-                      </div>
-                    </a>
-                    <a href="https://hamkorbank.uz/physical/bank-cards/" target="_blank" rel="noreferrer noopener"
-                      class="body-link24">
-                      <div class="body-component314">
-                        <span class="body-text126 hamkorbank.uzGolosTextRegular1">
-                          Для онлайн-покупок
-                        </span>
-                        <img src="public/external/component2i163-ly5n.svg" alt="Component2I163"
-                          class="body-component219" />
-                      </div>
-                    </a>
-                    <a href="https://hamkorbank.uz/physical/bank-cards/" target="_blank" rel="noreferrer noopener"
-                      class="body-link25">
-                      <div class="body-component315">
-                        <span class="body-text127 hamkorbank.uzGolosTextRegular1">
-                          Для путешествий
-                        </span>
-                        <img src="public/external/component2i163-27u.svg" alt="Component2I163"
-                          class="body-component220" />
-                      </div>
-                    </a>
-                  </div>
-                  <div class="body-background13">
-                    <span class="body-text128 hamkorbank.uzMontserratSemiBold">
-                      Микрозаймы
-                    </span>
-                    <div class="body-component115">
-                      <span class="body-text129 hamkorbank.uzGolosTextRegular1">
-                        Все
-                      </span>
-                    </div>
-                    <a href="https://hamkorbank.uz/physical/microloans/microloan-online/" target="_blank"
-                      rel="noreferrer noopener" class="body-link26">
-                      <div class="body-component316">
-                        <span class="body-text130 hamkorbank.uzGolosTextRegular1">
-                          Онлайн микрозайм
-                        </span>
-                        <img src="public/external/component2i164-hkxq.svg" alt="Component2I164"
-                          class="body-component221" />
-                      </div>
-                    </a>
-                    <a href="https://hamkorbank.uz/physical/microloans/microloan/" target="_blank"
-                      rel="noreferrer noopener" class="body-link27">
-                      <div class="body-component317">
-                        <span class="body-text131 hamkorbank.uzGolosTextRegular1">
-                          Микрозайм под&nbsp;залог
-                        </span>
-                        <img src="public/external/component2i165-84b.svg" alt="Component2I165"
-                          class="body-component222" />
-                      </div>
-                    </a>
-                  </div>
-                  <div class="body-background14">
-                    <span class="body-text132 hamkorbank.uzMontserratSemiBold">
-                      Вклады
-                    </span>
-                    <div class="body-component116">
-                      <span class="body-text133 hamkorbank.uzGolosTextRegular1">
-                        Все
-                      </span>
-                    </div>
-                    <a href="https://hamkorbank.uz/physical/deposits/foizsiz/" target="_blank" rel="noreferrer noopener"
-                      class="body-link28">
-                      <div class="body-component318">
-                        <span class="body-text134 hamkorbank.uzGolosTextRegular1">
-                          Онлайн вклад
-                        </span>
-                        <img src="public/external/component2i166-nyo.svg" alt="Component2I166"
-                          class="body-component223" />
-                      </div>
-                    </a>
-                    <a href="https://hamkorbank.uz/physical/deposits/" target="_blank" rel="noreferrer noopener"
-                      class="body-link29">
-                      <div class="body-component319">
-                        <span class="body-text135 hamkorbank.uzGolosTextRegular1">
-                          В национальной валюте
-                        </span>
-                        <img src="public/external/component2i166-6nga.svg" alt="Component2I166"
-                          class="body-component224" />
-                      </div>
-                    </a>
-                    <a href="https://hamkorbank.uz/physical/deposits/" target="_blank" rel="noreferrer noopener"
-                      class="body-link30">
-                      <div class="body-component320">
-                        <span class="body-text136 hamkorbank.uzGolosTextRegular1">
-                          В иностранной валюте
-                        </span>
-                        <img src="public/external/component2i167-v4rm.svg" alt="Component2I167"
-                          class="body-component225" />
-                      </div>
-                    </a>
-                  </div>
-                  <div class="body-container17">
-                    <div class="body-group12">
-                      <div class="body-container18">
-                        <div class="body-heading1">
-                          <span class="body-text137 hamkorbank.uzSemanticHeading1">
-                            <span>Переводите деньги за&nbsp;рубеж</span>
-                            <br />
-                            <span>на&nbsp;карты Visa&nbsp;— выигрывайте</span>
-                            <br />
-                            <span>ценные призы</span>
-                          </span>
-                        </div>
-                        <span class="body-text143 hamkorbank.uzGolosTextRegular2">
-                          Для участия воспользуйтесь услугами Visa Direct
-                          и&nbsp;Alias
-                        </span>
-                        <a href="https://hamkorbank.uz/physical/bank-cards/visa-paywave/" target="_blank"
-                          rel="noreferrer noopener" class="body-link31">
-                          <div class="body-component411">
-                            <span class="body-text144 hamkorbank.uzGolosTextMedium1">
-                              Участвовать
-                            </span>
-                          </div>
-                        </a>
-                      </div>
-                      <div class="body-picturevisapromoxl1867x02fbweb-p"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      <div class="w-3-4 px-8 sm--w-full">
+        <div class="flex mx-8 space-x-reverse justify-between sm--flex-col">
+          <div class="flex px-8 grow justify-between max-w-649 sm--flex-col sm--mb-32">
+            <div class="flex flex-col sm--px-8"> <a href="filials/"
+                class="text-black mb-20 sm--mb-0 sm--p-12 last--mb-0 hover--text-green active--text-dark-green">Отделения
+                и&nbsp;банкоматы</a> <a href="exchange-rate/"
+                class="text-black mb-20 sm--mb-0 sm--p-12 last--mb-0 hover--text-green active--text-dark-green">Курсы
+                валют</a> <a href="https://cabinet.hamkorbank.uz/uz/category/cabinet2/login/" target="_blank"
+                class="text-black mb-20 sm--mb-0 sm--p-12 last--mb-0 hover--text-green active--text-dark-green">Личный
+                кабинет</a> <a href="/contact/" target="_blank"
+                class="text-black mb-20 sm--mb-0 sm--p-12 last--mb-0 hover--text-green active--text-dark-green">Обратная
+                связь</a> </div>
+            <div class="flex flex-col sm--px-8"> <a href="/"
+                class="text-black mb-20 sm--mb-0 sm--p-12 last--mb-0 hover--text-green active--text-dark-green">Частным
+                лицам</a> <a href="business/"
+                class="text-black mb-20 sm--mb-0 sm--p-12 last--mb-0 hover--text-green active--text-dark-green">Для
+                бизнеса</a> <a href="/financial-institutions/" target="_blank"
+                class="text-black mb-20 sm--mb-0 sm--p-12 last--mb-0 hover--text-green active--text-dark-green">Фин.
+                организациям</a> <a href="/about-bank/" target="_blank"
+                class="text-black mb-20 sm--mb-0 sm--p-12 last--mb-0 hover--text-green active--text-dark-green">О&nbsp;банке</a>
+            </div>
+            <div class="flex flex-col sm--px-8"> <a href="/press-center/" target="_blank"
+                class="text-black mb-20 sm--mb-0 sm--p-12 last--mb-0 hover--text-green active--text-dark-green">Пресс-центр</a>
+              <a href="/about-bank/rekvizity/" target="_blank"
+                class="text-black mb-20 sm--mb-0 sm--p-12 last--mb-0 hover--text-green active--text-dark-green">Реквизиты</a>
+              <a href="/ebanking/" target="_blank"
+                class="text-black mb-20 sm--mb-0 sm--p-12 last--mb-0 hover--text-green active--text-dark-green">Интернет
+                банкинг</a>
             </div>
           </div>
-          <div class="body-section2">
-            <span class="body-text145 hamkorbank.uzSemanticHeading2">
-              Популярные продукты
-            </span>
-            <div class="body-component117">
-              <span class="body-text146 hamkorbank.uzGolosTextRegular1">
-                Финансы
-              </span>
-            </div>
-            <div class="body-component118">
-              <span class="body-text147 hamkorbank.uzGolosTextRegular1">
-                Премиум
-              </span>
-            </div>
-            <div class="body-container19">
-              <div class="body-container20">
-                <div class="body-picturepopularproductscardxl923x06b2web-p"></div>
-                <span class="body-text148 hamkorbank.uzMontserratSemiBold">
-                  <span>Бесплатная</span>
-                  <br />
-                  <span>карта Visa</span>
-                </span>
-                <span class="body-text152 hamkorbank.uzGolosTextRegular1">
-                  <span>Откройте виртуальную карту</span>
-                  <br />
-                  <span>для покупок в&nbsp;интернете</span>
-                  <br />
-                  <span>за&nbsp;7&nbsp;секунд</span>
-                </span>
-                <a href="https://hamkorbank.uz/physical/bank-cards/visa-virtual/" target="_blank"
-                  rel="noreferrer noopener" class="body-link32">
-                  <div class="body-component412">
-                    <span class="body-text158 hamkorbank.uzGolosTextMedium">
-                      Оформить
-                    </span>
-                  </div>
-                </a>
+          <div class="px-8 sm--hidden"> <a href="#" data-mobile-app="open" class="w-243 flex text-black"> <img
+                src="https://hamkorbank.uz/assets/images/static/mobile_app.svg" class="h-64 w-64 rounded-16 mr-16 overflow-hidden shrink-0"
+                alt="Мобильный банк">
+              <div>
+                <div class="font-medium mb-12">Мобильный банк</div>
+                <div class="text-size-s text-gray">Приложение для&nbsp;Android и&nbsp;iOS</div>
               </div>
-              <div class="body-background15">
-                <span class="body-text159 hamkorbank.uzMontserratSemiBold">
-                  <span>Микрозайм</span>
-                  <br />
-                  <span>за&nbsp;15&nbsp;минут</span>
-                </span>
-                <div class="body-picture1">
-                  <div class="body-time86x0e36web-p"></div>
-                </div>
-                <span class="body-text163 hamkorbank.uzGolosTextRegular1">
-                  Оформление онлайн
-                </span>
-                <a href="https://hamkorbank.uz/physical/microloans/microloan-online/" target="_blank"
-                  rel="noreferrer noopener" class="body-link33">
-                  <div class="body-component413">
-                    <span class="body-text164 hamkorbank.uzGolosTextMedium">
-                      Подробнее
-                    </span>
-                  </div>
-                </a>
-              </div>
-              <div class="body-background16">
-                <span class="body-text165 hamkorbank.uzMontserratSemiBold">
-                  <span>Ипотека</span>
-                  <br />
-                  <span>под&nbsp;17,5%</span>
-                </span>
-                <div class="body-picture2">
-                  <div class="body-income86x0e36web-p"></div>
-                </div>
-                <span class="body-text169 hamkorbank.uzGolosTextRegular1">
-                  Нужен только паспорт
-                </span>
-                <a href="https://hamkorbank.uz/physical/credits/mortgage-new-build/" target="_blank"
-                  rel="noreferrer noopener" class="body-link34">
-                  <div class="body-component414">
-                    <span class="body-text170 hamkorbank.uzGolosTextMedium">
-                      Подробнее
-                    </span>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="body-section3">
-            <span class="body-text171 hamkorbank.uzSemanticHeading2">
-              Карты
-            </span>
-            <div class="body-component119">
-              <span class="body-text172 hamkorbank.uzGolosTextRegular1">
-                Все карты
-              </span>
-            </div>
-            <div class="body-container21">
-              <div class="body-background17">
-                <div class="body-picturehumocard660x0345web-p"></div>
-                <a href="https://hamkorbank.uz/physical/bank-cards/humo/" target="_blank" rel="noreferrer noopener"
-                  class="body-link35">
-                  <div class="body-component415">
-                    <span class="body-text173 hamkorbank.uzGolosTextMedium">
-                      Подробнее
-                    </span>
-                  </div>
-                </a>
-                <div class="body-background18">
-                  <img src="public/external/component21756-y9qp.svg" alt="Component21756" class="body-component226" />
-                  <span class="body-text174 hamkorbank.uzGolosTextRegular">
-                    Для покупок
-                  </span>
-                </div>
-                <div class="body-component817">
-                  <span class="body-text175 hamkorbank.uzGolosTextRegular">
-                    UZS
-                  </span>
-                </div>
-                <span class="body-text176 hamkorbank.uzSemanticHeading3">
-                  HUMO
-                </span>
-                <span class="body-text177 hamkorbank.uzGolosTextMedium1">
-                  бесплатно
-                </span>
-                <span class="body-text178 hamkorbank.uzGolosTextRegular">
-                  Оформление
-                </span>
-                <span class="body-text179 hamkorbank.uzGolosTextMedium1">
-                  от&nbsp;3&nbsp;дней
-                </span>
-                <span class="body-text180 hamkorbank.uzGolosTextRegular">
-                  Изготовление
-                </span>
-              </div>
-              <div class="body-background19">
-                <div class="body-pictureuzcard660x0345web-p"></div>
-                <a href="https://hamkorbank.uz/physical/bank-cards/uzcard/" target="_blank" rel="noreferrer noopener"
-                  class="body-link36">
-                  <div class="body-component416">
-                    <span class="body-text181 hamkorbank.uzGolosTextMedium">
-                      Подробнее
-                    </span>
-                  </div>
-                </a>
-                <div class="body-background20">
-                  <img src="public/external/component21774-1tw.svg" alt="Component21774" class="body-component227" />
-                  <span class="body-text182 hamkorbank.uzGolosTextRegular">
-                    Для покупок
-                  </span>
-                </div>
-                <div class="body-component818">
-                  <span class="body-text183 hamkorbank.uzGolosTextRegular">
-                    UZS
-                  </span>
-                </div>
-                <span class="body-text184 hamkorbank.uzSemanticHeading3">
-                  UZCARD
-                </span>
-                <span class="body-text185 hamkorbank.uzGolosTextMedium1">
-                  30 000&nbsp;сум
-                </span>
-                <span class="body-text186 hamkorbank.uzGolosTextRegular">
-                  Оформление
-                </span>
-                <span class="body-text187 hamkorbank.uzGolosTextMedium1">
-                  от&nbsp;3&nbsp;дней
-                </span>
-                <span class="body-text188 hamkorbank.uzGolosTextRegular">
-                  Изготовление
-                </span>
-              </div>
-              <div class="body-background21">
-                <div class="body-picturevisaclassicexchange660x0345web-p"></div>
-                <a href="https://hamkorbank.uz/physical/bank-cards/visa-paywave/" target="_blank"
-                  rel="noreferrer noopener" class="body-link37">
-                  <div class="body-component417">
-                    <span class="body-text189 hamkorbank.uzGolosTextMedium">
-                      Подробнее
-                    </span>
-                  </div>
-                </a>
-                <div class="body-background22">
-                  <img src="public/external/component21791-56ld.svg" alt="Component21791" class="body-component228" />
-                  <span class="body-text190 hamkorbank.uzGolosTextRegular">
-                    Для путешествий
-                  </span>
-                </div>
-                <div class="body-component819">
-                  <span class="body-text191 hamkorbank.uzGolosTextRegular">
-                    USD
-                  </span>
-                </div>
-                <div class="body-component820">
-                  <span class="body-text192 hamkorbank.uzGolosTextRegular">
-                    EUR
-                  </span>
-                </div>
-                <span class="body-text193 hamkorbank.uzSemanticHeading3">
-                  Visa Classic
-                </span>
-                <span class="body-text194 hamkorbank.uzGolosTextMedium1">
-                  бесплатно
-                </span>
-                <span class="body-text195 hamkorbank.uzGolosTextRegular">
-                  Оформление
-                </span>
-                <span class="body-text196 hamkorbank.uzGolosTextMedium1">
-                  от&nbsp;3&nbsp;дней
-                </span>
-                <span class="body-text197 hamkorbank.uzGolosTextRegular">
-                  Изготовление
-                </span>
-              </div>
-              <div class="body-background23">
-                <div class="body-pictureunionpaycard660x0345web-p"></div>
-                <a href="https://hamkorbank.uz/physical/bank-cards/unionpay-classic/" target="_blank"
-                  rel="noreferrer noopener" class="body-link38">
-                  <div class="body-component418">
-                    <span class="body-text198 hamkorbank.uzGolosTextMedium">
-                      Подробнее
-                    </span>
-                  </div>
-                </a>
-                <div class="body-background24">
-                  <img src="public/external/component21810-hscv.svg" alt="Component21810" class="body-component229" />
-                  <span class="body-text199 hamkorbank.uzGolosTextRegular">
-                    Для путешествий
-                  </span>
-                </div>
-                <div class="body-component821">
-                  <span class="body-text200 hamkorbank.uzGolosTextRegular">
-                    USD
-                  </span>
-                </div>
-                <span class="body-text201 hamkorbank.uzSemanticHeading3">
-                  UnionPay Classic
-                </span>
-                <span class="body-text202 hamkorbank.uzGolosTextMedium1">
-                  Бесплатно
-                </span>
-                <span class="body-text203 hamkorbank.uzGolosTextRegular">
-                  Оформление
-                </span>
-                <span class="body-text204 hamkorbank.uzGolosTextMedium1">
-                  от&nbsp;3&nbsp;дней
-                </span>
-                <span class="body-text205 hamkorbank.uzGolosTextRegular">
-                  Изготовление
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="body-section4">
-            <span class="body-text206 hamkorbank.uzSemanticHeading2">
-              О&nbsp;Hamkorbank
-            </span>
-            <div class="body-container22">
-              <div class="body-pictureaboutbankxl923x06b2web-p"></div>
-              <div class="body-heading3">
-                <span class="body-text207 hamkorbank.uzSemanticHeading3">
-                  <span>Hamkorbank более</span>
-                  <br />
-                  <span>30&nbsp;лет с&nbsp;вами!</span>
-                </span>
-              </div>
-              <span class="body-text211 hamkorbank.uzGolosTextRegular2">
-                <span>Вместе мы&nbsp;уверены в&nbsp;друг друге</span>
-                <br />
-                <span>и&nbsp;всегда на&nbsp;высоте!</span>
-              </span>
-              <a href="https://hamkorbank.uz/about-bank/" target="_blank" rel="noreferrer noopener" class="body-link39">
-                <div class="body-component419">
-                  <span class="body-text215 hamkorbank.uzGolosTextMedium">
-                    Подробнее
-                  </span>
-                </div>
-              </a>
-            </div>
-            <div class="body-background25">
-              <img src="public/external/component21832-l1eg.svg" alt="Component21832" class="body-component230" />
-              <span class="body-text216 hamkorbank.uzMontserratSemiBold">
-                33&nbsp;года
-              </span>
-              <span class="body-text217 hamkorbank.uzGolosTextRegular1">
-                Вместе с&nbsp;вами
-              </span>
-            </div>
-            <div class="body-background26">
-              <img src="public/external/component21837-0cbf.svg" alt="Component21837" class="body-component231" />
-              <span class="body-text218 hamkorbank.uzMontserratSemiBold">
-                157&nbsp;офиса
-              </span>
-              <span class="body-text219 hamkorbank.uzGolosTextRegular1">
-                Во&nbsp;всех регионах страны
-              </span>
-            </div>
-            <div class="body-background27">
-              <img src="public/external/component21842-4sj.svg" alt="Component21842" class="body-component232" />
-              <span class="body-text220 hamkorbank.uzMontserratSemiBold">
-                3&nbsp;миллиона
-              </span>
-              <span class="body-text221 hamkorbank.uzGolosTextRegular1">
-                Активных клиентов
-              </span>
-            </div>
-            <div class="body-background28">
-              <img src="public/external/component21847-yobi.svg" alt="Component21847" class="body-component233" />
-              <span class="body-text222 hamkorbank.uzMontserratSemiBold">
-                16&nbsp;лет
-              </span>
-              <span class="body-text223 hamkorbank.uzGolosTextRegular1">
-                На&nbsp;международном рынке
-              </span>
-            </div>
-          </div>
-          <div class="body-container23">
-            <div class="body-section5"></div>
-            <div class="body-picturemobileappphysxl1867x02fbweb-p">
-              <div class="body-picturemobileapp-d181xl954x0147web-p"></div>
-              <div class="body-container24">
-                <span class="body-text224 hamkorbank.uzSemanticHeading2">
-                  Приложение Hamkor
-                </span>
-                <div class="body-list">
-                  <div class="body-item1">
-                    <img src="public/external/background1861-2kz-200w.png" alt="Background1861"
-                      class="body-background29" />
-                    <span class="body-text225 hamkorbank.uzSemanticItem">
-                      Обменивайте валюту в&nbsp;два клика
-                    </span>
-                  </div>
-                  <div class="body-item2">
-                    <img src="public/external/background1866-2jqn-200w.png" alt="Background1866"
-                      class="body-background30" />
-                    <span class="body-text226 hamkorbank.uzSemanticItem">
-                      Переводите до&nbsp;5 000 000&nbsp;сум в&nbsp;месяц
-                      бесплатно
-                    </span>
-                  </div>
-                  <div class="body-item3">
-                    <img src="public/external/background1869-wpme-200w.png" alt="Background1869"
-                      class="body-background31" />
-                    <span class="body-text227 hamkorbank.uzSemanticItem">
-                      Оформляйте дебетовую карту VISA бесплатно
-                    </span>
-                  </div>
-                </div>
-                <div class="body-background32">
-                  <div class="body-picturephysicalqr200x09e3web-p"></div>
-                </div>
-                <span class="body-text228 hamkorbank.uzGolosTextMedium1">
-                  Мобильный банк
-                </span>
-                <span class="body-text229 hamkorbank.uzGolosTextRegular">
-                  <span>Отсканируйте QR-код</span>
-                  <br />
-                  <span>для&nbsp;быстрого доступа</span>
-                  <br />
-                  <span>ко&nbsp;всем услугам банка</span>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="body-section6">
-            <div class="body-background33">
-              <div class="body-container25">
-                <span class="body-text235 hamkorbank.uzMontserratSemiBold">
-                  Отделения и&nbsp;банкоматы
-                </span>
-                <span class="body-text236 hamkorbank.uzGolosTextRegular1">
-                  Покажем ближайшие банкоматы для&nbsp;снятия наличных
-                </span>
-                <a href="https://hamkorbank.uz/filials/" target="_blank" rel="noreferrer noopener" class="body-link40">
-                  <div class="body-component420">
-                    <span class="body-text237 hamkorbank.uzGolosTextMedium">
-                      Открыть карту
-                    </span>
-                  </div>
-                </a>
-                <div class="body-picture3">
-                  <div class="body-map86x0e36web-p"></div>
-                </div>
-              </div>
-            </div>
-            <div class="body-background34">
-              <div class="body-container26">
-                <span class="body-text238 hamkorbank.uzMontserratSemiBold">
-                  Обратная связь
-                </span>
-                <span class="body-text239 hamkorbank.uzGolosTextRegular1">
-                  Отвечаем на&nbsp;вопросы по&nbsp;всем продуктам
-                </span>
-                <a href="https://hamkorbank.uz/contact/" target="_blank" rel="noreferrer noopener" class="body-link41">
-                  <div class="body-component421">
-                    <span class="body-text240 hamkorbank.uzGolosTextMedium">
-                      <span class="body-text241">Связаться с</span>
-                      <span>.....</span>
-                    </span>
-                  </div>
-                </a>
-                <div class="body-picture4">
-                  <div class="body-message86x0e36web-p"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="body-section7">
-            <img src="public/external/component21900-shjr.svg" alt="Component21900" class="body-component234" />
-            <span class="body-text243 hamkorbank.uzGolosTextRegular">
-              Последнее обновление: 24.10.2024
-            </span>
-          </div>
-          <div class="body-footer">
-            <div class="body-container27">
-              <div class="body-link42">
-                <span class="body-text244 hamkorbank.uzSemanticLink3">
-                  +998 (33) 009 31 42
-                </span>
-              </div>
-              <span class="body-text245 hamkorbank.uzMontserratBold">,</span>
-              <div class="body-link43">
-                <span class="body-text246 hamkorbank.uzSemanticLink3">
-                  1256
-                </span>
-              </div>
-              <span class="body-text247 hamkorbank.uzGolosTextRegular">
-                Колл центр
-              </span>
-              <div class="body-link44">
-                <span class="body-text248 hamkorbank.uzSemanticLink3">
-                  + 998 (78) 150 91 25
-                </span>
-              </div>
-              <span class="body-text249 hamkorbank.uzGolosTextRegular">
-                Телефон доверия
-              </span>
-              <div class="body-container28">
-                <div class="body-component120">
-                  <span class="body-text250 hamkorbank.uzGolosTextRegular1">
-                    Отделения и&nbsp;банкоматы
-                  </span>
-                </div>
-                <div class="body-component121">
-                  <span class="body-text251 hamkorbank.uzGolosTextRegular1">
-                    Курсы валют
-                  </span>
-                </div>
-                <div class="body-component122">
-                  <span class="body-text252 hamkorbank.uzGolosTextRegular1">
-                    Личный кабинет
-                  </span>
-                </div>
-                <div class="body-component123">
-                  <span class="body-text253 hamkorbank.uzGolosTextRegular1">
-                    Обратная связь
-                  </span>
-                </div>
-                <div class="body-component124">
-                  <span class="body-text254 hamkorbank.uzGolosTextRegular1">
-                    Частным лицам
-                  </span>
-                </div>
-                <div class="body-component125">
-                  <span class="body-text255 hamkorbank.uzGolosTextRegular1">
-                    Для бизнеса
-                  </span>
-                </div>
-                <div class="body-component126">
-                  <span class="body-text256 hamkorbank.uzGolosTextRegular1">
-                    Фин. организациям
-                  </span>
-                </div>
-                <div class="body-component127">
-                  <span class="body-text257 hamkorbank.uzGolosTextRegular1">
-                    О&nbsp;банке
-                  </span>
-                </div>
-                <div class="body-component128">
-                  <span class="body-text258 hamkorbank.uzGolosTextRegular1">
-                    Пресс-центр
-                  </span>
-                </div>
-                <div class="body-component129">
-                  <span class="body-text259 hamkorbank.uzGolosTextRegular1">
-                    Реквизиты
-                  </span>
-                </div>
-                <div class="body-component130">
-                  <span class="body-text260 hamkorbank.uzGolosTextRegular1">
-                    Интернет банкинг
-                  </span>
-                </div>
-              </div>
-              <a href="https://hamkorbank.uz/" target="_blank" rel="noreferrer noopener" class="body-link45">
-                <div class="body-link46">
-                  <img src="public/external/mobileappsvg1941-fxw7.svg" alt="mobileappsvg1941"
-                    class="body-mobileappsvg" />
-                  <span class="body-text261 hamkorbank.uzSemanticLink2">
-                    Мобильный банк
-                  </span>
-                  <span class="body-text262 hamkorbank.uzSemanticLink1">
-                    <span>Приложение</span>
-                    <br />
-                    <span>для&nbsp;Android и&nbsp;iOS</span>
-                  </span>
-                </div>
-              </a>
-              <a href="https://hamkorbank.uz/compliance/" target="_blank" rel="noreferrer noopener" class="body-link47">
-                <div class="body-component422">
-                  <span class="body-text266 hamkorbank.uzGolosTextMedium1">
-                    Сообщить о коррупции
-                  </span>
-                </div>
-              </a>
-              <a href="https://www.facebook.com/HamkorBank.uz" target="_blank" rel="noreferrer noopener"
-                class="body-link48">
-                <div class="body-component73">
-                  <img src="public/external/component2i195-2h97.svg" alt="Component2I195" class="body-component235" />
-                </div>
-              </a>
-              <a href="https://www.instagram.com/hamkorbank.uz/" target="_blank" rel="noreferrer noopener"
-                class="body-link49">
-                <div class="body-component74">
-                  <img src="public/external/component2i196-luh4.svg" alt="Component2I196" class="body-component236" />
-                </div>
-              </a>
-              <a href="http://www.youtube.com/c/JSCBHamkorBank" target="_blank" rel="noreferrer noopener"
-                class="body-link50">
-                <div class="body-component75">
-                  <img src="public/external/component2i196-ns8q.svg" alt="Component2I196" class="body-component237" />
-                </div>
-              </a>
-              <a href="https://t.me/Hamkorbankuz" target="_blank" rel="noreferrer noopener" class="body-link51">
-                <div class="body-component76">
-                  <img src="public/external/component2i197-50xq.svg" alt="Component2I197" class="body-component238" />
-                </div>
-              </a>
-              <div class="body-paragraph-horizontal-border">
-                <span class="body-text267 hamkorbank.uzGolosTextRegular">
-                  Последняя дата обновления информации
-                  на&nbsp;сайте:&nbsp;15-11-2024 11:27
-                </span>
-                <span class="body-text268 hamkorbank.uzGolosTextRegular">
-                  © 2024 АКБ «Hamkorbank»
-                </span>
-                <span class="body-text269 hamkorbank.uzGolosTextRegular">
-                  Лицензия № 64&nbsp;ЦБ РУз от&nbsp;31&nbsp;августа
-                  1991&nbsp;г.
-                </span>
-                <span class="body-text270 hamkorbank.uzGolosTextRegular">
-                  При использовании материалов сайта ссылка на&nbsp;веб-сайт
-                  www.hamkorbank.uz обязательна
-                </span>
-              </div>
+            </a> </div>
+          <div class="px-20 hidden sm--block sm--px-28">
+            <div class="flex mx-4 my-4 space-x-reverse space-y-reverse flex-wrap">
+              <div class="for--android p-4 sm--w-1-2 xs--w-full"> <a
+                  href="https://play.google.com/store/apps/details?id=com.hamkorbank.mobile"
+                  class="bg-black rounded-8 sm--flex flex-center h-48 py-10 active--bg-gray-com w-full w-inline-block">
+                  <picture style="aspect-ratio: 3.866 / 1" class="h-full">
+                    <source
+                      srcset="/assets/cache_image/playmarket_145x0_0e0.webP 1x, /assets/cache_image/playmarket_193x0_978.webP 2x"
+                      type="image/webp">
+                    <source
+                      srcset="/assets/cache_image/playmarket_145x0_b69.png 1x, /assets/cache_image/playmarket_193x0_699.png 2x"
+                      type="image/png"> <img loading="lazy" width="145" height="38" class="h-full w-full object-cover "
+                      src="/assets/cache_image/playmarket_145x0_b69.png" alt="">
+                  </picture>
+                </a> </div>
+              <div class="for--ios p-4 sm--w-1-2 xs--w-full"> <a
+                  href="https://apps.apple.com/id/app/hamkor/id1602323485"
+                  class="bg-black rounded-8 sm--flex flex-center h-48 py-10 active--bg-gray-com w-full w-inline-block">
+                  <picture style="aspect-ratio: 3.643 / 1" class="h-full">
+                    <source
+                      srcset="/assets/cache_image/appstore_136x0_791.webP 1x, /assets/cache_image/appstore_181x0_cf4.webP 2x"
+                      type="image/webp">
+                    <source
+                      srcset="/assets/cache_image/appstore_136x0_8b3.png 1x, /assets/cache_image/appstore_181x0_ee5.png 2x"
+                      type="image/png"> <img loading="lazy" width="136" height="38" class="h-full w-full object-cover "
+                      src="/assets/cache_image/appstore_136x0_8b3.png" alt="">
+                  </picture>
+                </a> </div><link rel="stylesheet" href="https://hamkorbank.uz/assets/minifyx/css/styles_p3357d6a119.min.css" type="text/css">
+
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="flex mx-8 space-x-reverse flex-wrap mb-48 sm--flex-col sm--mb-32">
+      <div class="w-1-4 px-8 sm--w-full sm--justify-center sm--mb-32">
+        <div class="flex sm--px-20"> <a href="compliance/" class=" button w-inline-block is--secondary sm--w-full">
+            <span>Сообщить о коррупции</span> </a> </div>
+      </div>
+      <div class="w-1-4 px-8 flex items-center sm--w-full sm--justify-center">
+        <div class="flex mx-16 space-x-reverse sm--justify-center sm--max-w-414 xs--max-w-none">
+          <div class="px-16"> <a href="https://www.facebook.com/HamkorBank.uz" target="_blank" data-click-event="192"
+              class="p-4 text-gray-com hover--text-green active--text-dark-green w-inline-block"> <i
+                class="icon-32 icon-facebook sm--icon-40"></i> </a> </div>
+          <div class="px-16"> <a href="https://www.instagram.com/hamkorbank.uz/" target="_blank" data-click-event="191"
+              class="p-4 text-gray-com hover--text-green active--text-dark-green w-inline-block"> <i
+                class="icon-32 icon-instagram sm--icon-40"></i> </a> </div>
+          <div class="px-16"> <a href="http://www.youtube.com/c/JSCBHamkorBank" target="_blank" data-click-event="193"
+              class="p-4 text-gray-com hover--text-green active--text-dark-green w-inline-block"> <i
+                class="icon-32 icon-youtube sm--icon-40"></i> </a> </div>
+          <div class="px-16"> <a href="https://t.me/Hamkorbankuz" target="_blank" data-click-event="194"
+              class="p-4 text-gray-com hover--text-green active--text-dark-green w-inline-block"> <i
+                class="icon-32 icon-telegram sm--icon-40"></i> </a> </div>
+        </div>
+      </div>
+    </div>
+    <div class="sm--px-20 sm--pb-24">
+      <div class="border-t border-gray py-12 border-solid border-x-0 border-b-0 sm--py-16 sm--flex-col">
+        <div class="flex flex-wrap mx-10 my-4 space-x-reverse space-y-reverse sm--m-0">
+          <div class="text-gray text-size-s px-10 py-4 sm--p-0 sm--mb-12">Последняя дата обновления информации
+            на&nbsp;сайте:&nbsp;28-11-2024 12:57</div>
+          <div class="text-gray text-size-s px-10 py-4 sm--p-0 sm--mb-12">© 2024 АКБ «Hamkorbank»</div>
+          <div class="text-gray text-size-s px-10 py-4 sm--p-0 sm--mb-12">Лицензия №&thinsp;64&nbsp;ЦБ РУз
+            от&nbsp;31&nbsp;августа 1991&nbsp;г.</div>
+          <div class="text-gray text-size-s px-10 py-4 sm--p-0 sm--mb-12">При использовании материалов сайта ссылка
+            на&nbsp;веб-сайт www.hamkorbank.uz обязательна</div>
+          <div class="text-gray text-size-s px-10 py-4 sm--p-0">Продолжая пользование сайтом, я&nbsp;выражаю согласие
+            на&nbsp;обработку моих персональных данных</div>
+        </div>
+      </div>
+    </div>
   </div>
+
 </body>
 
 </html>
